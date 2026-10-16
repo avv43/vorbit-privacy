@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vorbit — Informativa sulla privacy</title>
+<style>
+  :root { color-scheme: light dark; --bg: #f8f8fb; --fg: #1a1530; --muted: #5d5873; --accent: #6d4aff; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0f0b1e; --fg: #ece9f7; --muted: #a39fb8; --accent: #9b85ff; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.8rem; margin: 0 0 4px; }
+  h2 { font-size: 1.15rem; margin-top: 2em; color: var(--accent); }
+  p.meta { color: var(--muted); margin-top: 0; }
+  li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Informativa sulla privacy</h1>
+  <p class="meta">Vorbit — ultimo aggiornamento: 16 ottobre 2026</p>
+
+  <h2>In breve</h2>
+  <p>Vorbit non richiede un account e non raccoglie dati per pubblicità o statistiche.
+  Tutto ciò che inserisci (planner, task, abitudini, obiettivi, media, finanze, note, viaggi)
+  resta salvato <strong>sul tuo dispositivo</strong>, a meno che tu non scelga di attivare la
+  sincronizzazione cloud facoltativa.</p>
+
+  <h2>Dati salvati sul dispositivo</h2>
+  <ul>
+    <li>I contenuti che crei nell'app, salvati nel database locale del dispositivo.</li>
+    <li>Le preferenze (tema, lingua, colori) e, se attivato, il PIN di blocco in forma cifrata (hash).</li>
+    <li>I backup automatici, salvati nella cartella <em>Documenti/Vorbit</em> del dispositivo.</li>
+    <li>I file che carichi nella sezione File o alleghi a task, eventi e note.</li>
+  </ul>
+  <p>Disinstallando l'app i dati vengono eliminati (i backup nella cartella Documenti restano finché non li cancelli).</p>
+
+  <h2>Account e sincronizzazione (facoltativi)</h2>
+  <p>Se crei un account, Vorbit salva il tuo indirizzo email e una copia dei tuoi contenuti sui
+  server di <strong>Supabase</strong> (Unione Europea) per sincronizzarli tra i tuoi dispositivi.
+  I dati sono accessibili solo al tuo account e trasmessi in modo cifrato. Puoi uscire in
+  qualsiasi momento (i dati restano sul dispositivo) oppure eliminare l'account da
+  Impostazioni › Account e sincronizzazione: l'email e tutti i dati nel cloud vengono
+  cancellati definitivamente.</p>
+  <p>Con l'account, anche i file che carichi vengono copiati in uno spazio privato su Supabase
+  Storage, leggibile solo dal tuo account, e cancellati con l'eliminazione dell'account.</p>
+
+  <h2>Notifiche push (con account)</h2>
+  <p>Per avvisarti di messaggi, richieste di amicizia, sfide e piani di gruppo anche ad app chiusa,
+  Vorbit registra un identificativo del dispositivo presso <strong>Firebase Cloud Messaging</strong>
+  (Google). Le notifiche contengono solo il nome del mittente e un breve testo. Puoi scegliere
+  quali ricevere in Impostazioni › Notifiche; l'identificativo viene cancellato quando esci
+  dall'account.</p>
+
+  <h2>Segnalazioni di errori (facoltative)</h2>
+  <p>Solo se le attivi in Impostazioni › Privacy, quando l'app si blocca invia un rapporto tecnico
+  (messaggio d'errore, schermata, versione dell'app e del sistema). Il rapporto non contiene i tuoi
+  contenuti: email, identificativi, codici amico e parametri dei link vengono rimossi prima dell'invio.</p>
+
+  <h2>Nome utente</h2>
+  <p>Se scegli un nome utente (@nome), è unico e chi lo conosce può usarlo per inviarti una richiesta
+  di amicizia, come con il codice amico. Non è elencato pubblicamente né ricercabile per parti.</p>
+
+  <h2>Inviti e codici</h2>
+  <p>Se inviti un amico con il tuo link, registriamo chi ha usato l'invito per assegnare le monete
+  di benvenuto a entrambi. Quando riscatti un codice promozionale registriamo il codice usato,
+  per impedire che venga riscattato più volte.</p>
+
+  <h2>Acquisti (facoltativi)</h2>
+  <p>Abbonamento Premium e monete si acquistano tramite <strong>Google Play</strong>: Vorbit non
+  riceve né conserva i dati della tua carta. Per verificare gli acquisti usiamo
+  <strong>RevenueCat</strong>, che riceve un identificativo anonimo dell'app (o del tuo account
+  Vorbit, se lo hai creato) e lo storico degli acquisti. Puoi gestire o disdire l'abbonamento
+  in qualsiasi momento da Google Play › Pagamenti e abbonamenti.</p>
+
+  <h2>Amici, gruppi e sfide (con account)</h2>
+  <p>Se usi la sezione Amici, i tuoi amici vedono il tuo nome, la tua emoji e solo ciò che scegli
+  di condividere in Impostazioni › Privacy. Messaggi, gruppi, liste condivise e sfide sono
+  visibili solo alle persone coinvolte e vengono cancellati con l'eliminazione dell'account.</p>
+
+  <h2>Servizi esterni</h2>
+  <p>Alcune funzioni, solo quando le usi, inviano il testo che digiti a servizi di terze parti:</p>
+  <ul>
+    <li><strong>Google Books</strong>, <strong>Open Library</strong>, <strong>Apple iTunes Search</strong>, <strong>TVMaze</strong> e <strong>Wikipedia</strong>: ricerca di libri, film, serie e giochi nella sezione Media.</li>
+    <li><strong>OpenStreetMap Nominatim</strong>: ricerca dei luoghi nella sezione Viaggi.</li>
+  </ul>
+  <p>Questi servizi ricevono il testo cercato e l'indirizzo IP del dispositivo secondo le proprie
+  informative. Vorbit non invia loro nessun altro dato.</p>
+
+  <h2>Permessi Android</h2>
+  <ul>
+    <li><strong>Notifiche</strong> e <strong>sveglie</strong>: per i promemoria di abitudini, eventi e scadenze.</li>
+    <li><strong>Avvio del dispositivo</strong>: per riprogrammare i promemoria dopo un riavvio.</li>
+    <li><strong>Fotocamera e foto</strong>: solo quando scegli un'immagine per profilo o copertine.</li>
+    <li><strong>Biometria</strong>: solo se attivi lo sblocco con impronta; l'impronta non lascia mai il sistema Android.</li>
+    <li><strong>Internet</strong>: per le ricerche descritte sopra.</li>
+  </ul>
+
+  <h2>Condivisione e pubblicità</h2>
+  <p>Vorbit non contiene pubblicità, sistemi di tracciamento o analisi statistiche e non vende né cede dati a terzi.</p>
+
+  <h2>Minori</h2>
+  <p>L'app non raccoglie dati personali e può essere usata a qualsiasi età.</p>
+
+  <h2>Contatti</h2>
+  <p>Per domande su questa informativa: <a href="mailto:moonvibes.studioo@gmail.com">moonvibes.studioo@gmail.com</a>.</p>
+</main>
+</body>
+</html>
