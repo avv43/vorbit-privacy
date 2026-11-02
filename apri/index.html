@@ -18,6 +18,7 @@
   .code span{font:700 20px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em;background:#f4f2ff;padding:12px 16px;border-radius:14px}
   .code button{border:0;background:#ece9ff;color:#5a3fe0;font-weight:700;padding:12px 14px;border-radius:14px;cursor:pointer}
   a.btn{display:inline-block;margin-top:20px;background:#6d5af0;color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:16px}
+  a.btn.store{display:block;margin:12px auto 0;max-width:240px;background:#1e1b4b}
   .small{font-size:12px;color:#8a86a8}
   [hidden]{display:none!important}
 </style>
@@ -30,6 +31,7 @@
       <p id="lead"></p>
       <div class="code" id="codeBox" hidden><span id="code"></span><button type="button" id="copy">Copia</button></div>
       <a class="btn" id="open" href="#">Apri in Vorbit</a>
+      <a class="btn store" id="store" href="#" hidden>Scarica Vorbit</a>
       <p class="small" id="help"></p>
     </div>
   </div>
@@ -46,8 +48,8 @@
   var path = gift ? "redeem/" + gift : invite ? "invite/" + invite : "";
   var en = (navigator.language || "").slice(0, 2) !== "it";
   var T = en
-    ? { open: "Open in Vorbit", copy: "Copy", copied: "Copied!", giftT: "A gift for you 🎁", giftL: "Open Vorbit to redeem it.", giftH: "If the app doesn't open: Vorbit › Settings › Redeem a code, and paste the code.", invT: "Join me on Vorbit 🌱", invL: "Open Vorbit to accept the invite: you both get coins.", invH: "If the app doesn't open: Vorbit › Friends › Invite code, and paste the code.", noT: "Open Vorbit", noL: "This link opens the Vorbit app.", noApp: "Vorbit doesn't seem to be installed on this phone. Install it, then tap the link again or paste the code in the app." }
-    : { open: "Apri in Vorbit", copy: "Copia", copied: "Copiato!", giftT: "Un regalo per te 🎁", giftL: "Apri Vorbit per riscattarlo.", giftH: "Se l'app non si apre: Vorbit › Impostazioni › Riscatta un codice, e incolla il codice.", invT: "Unisciti a me su Vorbit 🌱", invL: "Apri Vorbit per accettare l'invito: riceviamo monete a testa.", invH: "Se l'app non si apre: Vorbit › Amici › Codice invito, e incolla il codice.", noT: "Apri Vorbit", noL: "Questo link apre l'app Vorbit.", noApp: "Vorbit non sembra installata su questo telefono. Installala, poi tocca di nuovo il link oppure incolla il codice nell'app." };
+    ? { open: "Open in Vorbit", store: "Get Vorbit on Google Play", copy: "Copy", copied: "Copied!", giftT: "A gift for you 🎁", giftL: "Open Vorbit to redeem it.", giftH: "If the app doesn't open: Vorbit › Settings › Redeem a code, and paste the code.", invT: "Join me on Vorbit 🌱", invL: "Open Vorbit to accept the invite: you both get coins.", invH: "If the app doesn't open: Vorbit › Friends › Invite code, and paste the code.", noT: "Open Vorbit", noL: "This link opens the Vorbit app.", noApp: "Vorbit doesn't seem to be installed on this phone. Install it, then tap the link again or paste the code in the app." }
+    : { open: "Apri in Vorbit", store: "Scarica Vorbit da Google Play", copy: "Copia", copied: "Copiato!", giftT: "Un regalo per te 🎁", giftL: "Apri Vorbit per riscattarlo.", giftH: "Se l'app non si apre: Vorbit › Impostazioni › Riscatta un codice, e incolla il codice.", invT: "Unisciti a me su Vorbit 🌱", invL: "Apri Vorbit per accettare l'invito: riceviamo monete a testa.", invH: "Se l'app non si apre: Vorbit › Amici › Codice invito, e incolla il codice.", noT: "Apri Vorbit", noL: "Questo link apre l'app Vorbit.", noApp: "Vorbit non sembra installata su questo telefono. Installala, poi tocca di nuovo il link oppure incolla il codice nell'app." };
   document.documentElement.lang = en ? "en" : "it";
   document.getElementById("title").textContent = gift ? T.giftT : invite ? T.invT : T.noT;
   document.getElementById("lead").textContent = gift ? T.giftL : invite ? T.invL : T.noL;
@@ -70,6 +72,13 @@
   btn.href = android
     ? "intent://" + path + "#Intent;scheme=vorbit;package=com.moonvibes.vorbit;S.browser_fallback_url=" + encodeURIComponent(fallback) + ";end"
     : "vorbit://" + path;
+  // Without the app: the Play Store, with the invite code as referrer so the
+  // app picks it up on first launch (one link to share instead of two).
+  var store = document.getElementById("store");
+  store.textContent = T.store;
+  store.href = "https://play.google.com/store/apps/details?id=com.moonvibes.vorbit" +
+    (invite ? "&referrer=" + encodeURIComponent("invite=" + invite) : "");
+  store.hidden = android && !q.has("noapp");
   if (android && !q.has("noapp")) location.href = btn.href;
 </script>
 </body>
