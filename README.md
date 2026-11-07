@@ -1,9 +1,11 @@
-# Vorbit — Informativa sulla privacy
+# vorbit-privacy
 
-Pagina pubblica dell'informativa sulla privacy dell'app Vorbit (MoonVibes Studio),
-pubblicata con GitHub Pages: https://avv43.github.io/vorbit-privacy/
+The Vorbit pages moved to **https://moonvibes.app** (repo avv43/Vorbit, folder `site/`).
+These files only redirect the old addresses there, keeping `?codice=…` and `#…`:
 
-La fonte è `public/privacy.html` nel repository dell'app; questa copia viene
-aggiornata quando l'informativa cambia.
+- `/vorbit-privacy/` → https://moonvibes.app/privacy/
+- `/vorbit-privacy/apri/` → https://moonvibes.app/apri/
+- `/vorbit-privacy/accesso/` → https://moonvibes.app/accesso/
+- `/vorbit-privacy/elimina-account/` → https://moonvibes.app/elimina-account/
 
-Contatti: moonvibes.studioo@gmail.com
+`logo.png` stays for emails sent before the move.
